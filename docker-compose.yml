@@ -1,0 +1,31 @@
+
+services:
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v3.18.0
+    ports:
+      - "5002:5000"
+    volumes:
+      - ./:/workspace
+    working_dir: /workspace
+    command: >
+      mlflow server
+      --backend-store-uri sqlite:////workspace/mlflow.db
+      --default-artifact-root /workspace/mlartifacts
+      --host 0.0.0.0
+      --port 5000
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9091:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3001:3000"
+    depends_on:
+      - prometheus

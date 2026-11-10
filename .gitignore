@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+mlflow.db
+mlartifacts/
+mlruns/
+*.db-journal
