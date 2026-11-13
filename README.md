@@ -89,7 +89,9 @@ The dashboard contains four panels:
 - `A3_Screenshots/` — Screenshots documenting the implementation
 
 ## 8. Evidence and Screenshots
+### IMDb Sentiment Monitoring Application
 
+![IMDb Sentiment Monitoring](A3_Screenshots/A3_IMDB_Sentiment_Monitoring.png)
 ### Grafana Dashboard
 
 ![Grafana Dashboard](A3_Screenshots/Grafana_A3_Dashboard.png)
